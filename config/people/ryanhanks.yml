@@ -42,7 +42,7 @@ attributes:
                 - vim-css-color: https://github.com/ap/vim-css-color
     git:
         name: Ryan Hanks
-        email: ryandhanks@gmail.com
+        email: ryan.hanks@webfilings.com
     osxdefaults:
         computername: ryanhanks-dev-ws
     authorization:
