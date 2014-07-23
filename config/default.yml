@@ -10,6 +10,7 @@ attributes:
             - git
         cask_apps:
             - google-chrome
+            - iterm2
     nodejs:
         apps:
             - bower
