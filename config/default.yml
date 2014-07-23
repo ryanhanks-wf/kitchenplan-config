@@ -10,8 +10,6 @@ attributes:
             - git
         cask_apps:
             - google-chrome
-        cask_fonts:
-            - inconsolata
     nodejs:
         apps:
             - bower
