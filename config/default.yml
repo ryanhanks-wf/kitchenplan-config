@@ -108,6 +108,7 @@ attributes:
             - dropbox
             - vmware-fusion
             - iterm2
+            - android-studio-bundle
     nodejs:
         apps:
             - uglify-js
