@@ -13,6 +13,7 @@ recipes:
         - homebrewalt::default                 # Installs homebrew and homebrew cask and installs all apps mentioned in the homebrewalt:apps and homebrewalt:cask_apps attributes
         - nodejs::default                      # Installs nodejs and installs all nodejs packages mentioned in the nodejs:apps attribute
         - applications::sublime_text_3
+        - sprout-git::projects
         # - osxdefaults::set_terminal_profile
         # - osxdefaults::add_a_context_menu_item_for_showing_the_web_inspector_in_web_views
         # - osxdefaults::disable_press-and-hold_for_keys_in_favor_of_key_repeat
@@ -41,7 +42,6 @@ recipes:
         # - sprout-base::workspace_directory
         # - sprout-git
         # - sprout-git::default_editor
-        # - sprout-git::projects
         # - sprout-git::git_scripts
         # - applications::omnigraffle
         # - applications::launchrocket
