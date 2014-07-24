@@ -5,7 +5,9 @@ cookbook "nodejs",                :github => "kitchenplan/chef-nodejs",         
 cookbook "applications",          :github => "kitchenplan/chef-applications"
 cookbook "osxdefaults",           :github => "kitchenplan/chef-osxdefaults",    :ref => "v1.0.2"
 cookbook "dotfiles",              :github => "kitchenplan/chef-dotfiles",       :ref => "v1.2"
-cookbook "drivers",               :github => "kitchenplan/chef-drivers",        :ref => "v1.0"
-cookbook "sudoalt",               :github => "kitchenplan/chef-sudoalt",        :ref => "v2.4"
 cookbook "dmg",                   :github => "opscode-cookbooks/dmg",           :ref => "v2.1.4"
-cookbook "composer",              :github => "kitchenplan/chef-composer",       :ref => "v1.0"
+
+cookbook 'sprout-git',            :github => 'pivotal-sprout/sprout-git'
+cookbook 'sprout-base',           :github => 'pivotal-sprout/sprout-base'
+cookbook 'sprout-osx-settings',   :github => 'pivotal-sprout/sprout-osx-settings'
+cookbook 'osx',                   :github => 'pivotal-sprout/osx'

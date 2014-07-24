@@ -1,53 +1,118 @@
-groups:
-    - bash
-    - developer
 recipes:
     global:
-        - dotfiles::sshconfig
+        - applications::create_var_chef_cache
+        # - dotfiles::bash_it
+        # - dotfiles::inputrc
+        # - applications::bash
+        # - dotfiles::sshconfig
+        # - dotfiles::gitconfig
+        # - applications::ssh_config
+        # - dotfiles::vim
+        # - dotfiles::workspace
     mac_os_x:
-        - applications::omnigraffle
-        - applications::launchrocket
-        - sudoalt::default
-        - osxdefaults::dock_automatically_hide_and_show_the_dock
-        - osxdefaults::dock_do_not_animate_opening_applications_from_the_dock
-        - osxdefaults::dock_enable_spring_loading_for_all_dock_items
-        - osxdefaults::dock_make_dock_icons_of_hidden_applications_translucent
-        - osxdefaults::dock_minimize_to_application
-        - osxdefaults::dock_set_the_icon_size_of_dock_items_to_36_pixels
-        - osxdefaults::dock_show_indicator_lights_for_open_applications_in_the_dock
-        - osxdefaults::dock_position_the_dock_on_the_left_side
-        - osxdefaults::dock_enable_highlight_hover_effect_for_the_grid_view_of_a_stack
-        - osxdefaults::dock_remove_the_animation_when_hiding_showing_the_dock
-        - osxdefaults::dock_remove_the_auto-hiding_dock_delay
-        - osxdefaults::menu_add_battery_percentage
-        - osxdefaults::menu_show_clock_with_date
-        - osxdefaults::mail_when_searching_do_not_include_trash
-        - osxdefaults::mail_copy_email_addresses_instead_of_names_in_mail
+        - homebrewalt::default                 # Installs homebrew and homebrew cask and installs all apps mentioned in the homebrewalt:apps and homebrewalt:cask_apps attributes
+        - nodejs::default                      # Installs nodejs and installs all nodejs packages mentioned in the nodejs:apps attribute
+        - applications::sublime_text_3
+        # - osxdefaults::set_terminal_profile
+        # - osxdefaults::add_a_context_menu_item_for_showing_the_web_inspector_in_web_views
+        # - osxdefaults::disable_press-and-hold_for_keys_in_favor_of_key_repeat
+        # - osxdefaults::set_a_blazingly_fast_keyboard_repeat_rate
+        # - osxdefaults::disable_disk_image_verification
+        # - osxdefaults::disable_gatekeeper
+        # - osxdefaults::disable_front_row
+        # - osxdefaults::enable_assistive_devices
+        # - osxdefaults::enable_full_keyboard_access_for_all_controls
+        # - osxdefaults::increase_window_resize_speed_for_cocoa_applications
+        # - osxdefaults::speed_up_mission_control_animations
+        # - osxdefaults::prevent_time_machine_from_prompting_to_use_new_hard_drives_as_backup_volume
+        # - osxdefaults::finder_allow_text_selection_in_quick_look
+        # - osxdefaults::finder_display_full_path
+        # - osxdefaults::finder_use_column_view_in_all_finder_windows_by_default
+        # - osxdefaults::finder_new_finder_windows_shows_homefolder
+        # - osxdefaults::finder_automatically_open_a_new_finder_window_when_a_volume_is_mounted
+        # - osxdefaults::finder_disable_the_warning_before_emptying_the_trash
+        # - osxdefaults::finder_disable_the_warning_when_changing_a_file_extension
+        # - osxdefaults::finder_search_the_current_folder_by_default
+        # - osxdefaults::finder_unhide_home
+        # - sprout-osx-settings::defaults_fast_key_repeat_rate
+        # - sprout-osx-settings
+        # - sprout-osx-settings::set_menubar_clock_format
+        # - sprout-osx-settings::dock_preferences
+        # - sprout-base::workspace_directory
+        # - sprout-git
+        # - sprout-git::default_editor
+        # - sprout-git::projects
+        # - sprout-git::git_scripts
+        # - applications::omnigraffle
+        # - applications::launchrocket
+        # - sudoalt::default
+        # - osxdefaults::dock_automatically_hide_and_show_the_dock
+        # - osxdefaults::dock_do_not_animate_opening_applications_from_the_dock
+        # - osxdefaults::dock_enable_spring_loading_for_all_dock_items
+        # - osxdefaults::dock_make_dock_icons_of_hidden_applications_translucent
+        # - osxdefaults::dock_minimize_to_application
+        # - osxdefaults::dock_set_the_icon_size_of_dock_items_to_36_pixels
+        # - osxdefaults::dock_show_indicator_lights_for_open_applications_in_the_dock
+        # - osxdefaults::dock_position_the_dock_on_the_left_side
+        # - osxdefaults::dock_enable_highlight_hover_effect_for_the_grid_view_of_a_stack
+        # - osxdefaults::dock_remove_the_animation_when_hiding_showing_the_dock
+        # - osxdefaults::dock_remove_the_auto-hiding_dock_delay
+        # - osxdefaults::menu_add_battery_percentage
+        # - osxdefaults::mail_when_searching_do_not_include_trash
+        # - osxdefaults::mail_copy_email_addresses_instead_of_names_in_mail
         - osxdefaults::set_computer_name
+
 attributes:
+    sprout:
+        dock_preferences:
+            orientation: bottom
+        settings:
+            clock_format: EEE MMM d  h:mm:ss a
+        git:
+            # name: Ryan Hanks
+            # email: ryan.hanks@webfilings.com
+            projects:
+                -
+                    name: mobile
+                    url: git@github.com:webfilings/mobile
+                    workspace_path: ~/Workspaces/mobile
+                -
+                    name: wf-mobile-api
+                    url: git@github.com:webfilings/wf-mobile-api
+                    workspace_path: ~/Workspaces/mobile
+                -
+                    name: wf-book-viewer-mobile
+                    url: git@github.com:webfilings/wf-book-viewer-mobile
+                    workspace_path: ~/Workspaces/mobile
+                -
+                    name: wf-book-viewer
+                    url: git@github.com:webfilings/wf-book-viewer
+                    workspace_path: ~/Workspaces/mobile
+                -
+                    name: wf-book-common
+                    url: git@github.com:webfilings/wf-book-common
+                    workspace_path: ~/Workspaces/mobile
+
     git:
         name: Ryan Hanks
         email: ryan.hanks@webfilings.com
     osxdefaults:
-        computername: ryanhanks-dev-ws
-    authorization:
-        sudo:
-            users:
-                - ryan.hanks
-            passwordless: true
-            include_sudoers_d: true
+        computername: ryanhanks-workiva-dev-ws
     homebrewalt:
+        apps:
+            - git
         cask_apps:
+            - google-chrome
             - onepassword
             - dropbox
-            - evernote
-            - istat-menus
-            - kaleidoscope
-            - alfred
-            - totalfinder
-            - spotify
-            - bartender
             - vmware-fusion
-            - vagrant
-            - hazel
-            - sonos
+            - iterm2
+    nodejs:
+        apps:
+            - uglify-js
+            - uglifycss
+            - bower
+            - grunt
+            - grunt-cli
+
+
