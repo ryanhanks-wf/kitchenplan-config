@@ -76,7 +76,7 @@ attributes:
         git:
             global_config:
                 user.name: '"Ryan Hanks"'
-                user.email: ryandhanks@gmail.com
+                user.email: ryan.hanks@webfilings.com
             projects:
                 -
                     name: mobile
